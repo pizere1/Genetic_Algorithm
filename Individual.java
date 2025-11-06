@@ -6,9 +6,7 @@ public class Individual {
     /**
      * Chromosome stores the individual's genetic data as an ArrayList of characters
      * Each character represents a gene
-     */
-    /**
-     * By default, the length of our chromosome,unles otherwise stated will be 8.
+     * By default, the length of our chromosome,unless otherwise stated will be 8.
      */
     ArrayList<Character> chromosome=new ArrayList<>();
     int c_max=8;
@@ -122,9 +120,11 @@ public class Individual {
         return builder.toString();
     }
 
-    //Main method
+    /**
+     * Main method
+     * @param args takes in string arguments
+     */
     public static void main(String[] args) {
-        // This code will set a random seed when you're testing Individual (i.e., running it without GA_Simulation)
         Random rng = new Random(System.currentTimeMillis());
     }
 
