@@ -30,7 +30,8 @@ public class GA_Simulation {
     }
 
     /**
-     * Function to initialize a generation of n individuals
+     * Function to initialize the population
+     * @return an arraylist of the generation
      */
     public ArrayList<Individual> init(){
         rng = new Random();
@@ -94,6 +95,17 @@ public class GA_Simulation {
         System.out.println("Best chromosome: " + best);
         System.out.println(); // blank line to match the example format
     }
+
+    /** Provided method that prints out summary statistics for a given
+     * generation, based on the information provided
+     * @param roundNumber: Which round of evolution are we on, from 0 to n
+     * @param bestFitness: Fitness of top-ranked (most fit) individual
+     * @param kthFitness: Fitness of kth-ranked individual
+     * @param leastFitness: Fitness of lowest-ranked (least fit) individual
+     * @param best: Individual with highest fitness
+     * @return: Nothing, prints statistics to standard out
+     */
+
     public void describeGeneration(int roundNumber, int bestFitness, int kthFitness, int leastFitness, Individual best){
         printGenInfo(roundNumber, bestFitness, kthFitness, leastFitness,best);
     }
