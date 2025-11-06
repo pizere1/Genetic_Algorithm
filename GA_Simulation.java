@@ -4,7 +4,9 @@ import java.util.Random;
 
 public class GA_Simulation {
 
-    // Use the instructions to identify the class variables, constructors, and methods you need
+    /**
+     * Simulation Class to simulate the evolution
+     */
     public static Random rng;
     int n, k, r, c_0, c_max, g;
     float m;
@@ -30,7 +32,7 @@ public class GA_Simulation {
     }
 
     /**
-     * Function to initialize the population
+     *  Function to initialize the population
      * @return an arraylist of the generation
      */
     public ArrayList<Individual> init(){
@@ -41,9 +43,10 @@ public class GA_Simulation {
         }
         return generation1;
     }
-    /** Provided method that sorts population by fitness score, best first
+
+    /**
+     *  Provided method that sorts population by fitness score, best first
      * @param pop: ArrayList of Individuals in the current generation
-     * @return: Nothing. ArrayList is sorted in place
      */
     public void rankPopulation(ArrayList<Individual> pop) {
         // sort population by fitness
@@ -85,7 +88,6 @@ public class GA_Simulation {
      * @param kthFitness: Fitness of kth-ranked individual
      * @param leastFitness: Fitness of lowest-ranked (least fit) individual
      * @param best: Individual with highest fitness
-     * @return: Nothing, prints statistics to standard out
      */
     private void printGenInfo(int roundNumber, int bestFitness, int kthFitness, int leastFitness, Individual best) {
         System.out.println("Round " + roundNumber + ":");
@@ -103,7 +105,6 @@ public class GA_Simulation {
      * @param kthFitness: Fitness of kth-ranked individual
      * @param leastFitness: Fitness of lowest-ranked (least fit) individual
      * @param best: Individual with highest fitness
-     * @return: Nothing, prints statistics to standard out
      */
 
     public void describeGeneration(int roundNumber, int bestFitness, int kthFitness, int leastFitness, Individual best){
@@ -134,7 +135,11 @@ public class GA_Simulation {
             generations.add(new_generation);//adding the new generation to the old one
         }
     }
-    //Main method
+
+    /**
+     * Main method
+     * @param args takes in string arguments
+     */
     public static void main(String[] args) {
 
         long seed = System.currentTimeMillis(); // default
