@@ -127,15 +127,6 @@ public class Individual {
         // This code will set a random seed when you're testing Individual (i.e., running it without GA_Simulation)
         Random rng = new Random(System.currentTimeMillis());
 
-        // You can pass rng, as defined above, to your constructors.
-        Individual i = new Individual(8, 26, rng);
-        Individual j = new Individual(8, 26, rng);
-        System.out.println(i);
-        System.out.println(j);
-        Individual k = new Individual(i,j,8, 9.0f, 6, rng);
-        System.out.println(k);
-        System.out.println(k.getFitness());
-
     }
 
 }
