@@ -94,6 +94,9 @@ public class GA_Simulation {
         System.out.println("Best chromosome: " + best);
         System.out.println(); // blank line to match the example format
     }
+    public void describeGeneration(int roundNumber, int bestFitness, int kthFitness, int leastFitness, Individual best){
+        printGenInfo(roundNumber, bestFitness, kthFitness, leastFitness,best);
+    }
 
     /**
      * Function to run the simulation
@@ -113,7 +116,7 @@ public class GA_Simulation {
         for(roundNumber=1;roundNumber<=r;roundNumber++){
             ArrayList<Individual> new_generation=evolve(generations.get(roundNumber-1), k, n);//create a new generation by evolving the previous generation
             rankPopulation(new_generation);
-            printGenInfo(roundNumber, new_generation.get(0).getFitness(),
+            describeGeneration(roundNumber, new_generation.get(0).getFitness(),
                     new_generation.get(rng.nextInt(new_generation.size())).getFitness(),
                     new_generation.get(new_generation.size()-1).getFitness(), new_generation.get(0));
             generations.add(new_generation);//adding the new generation to the old one
@@ -131,7 +134,7 @@ public class GA_Simulation {
             }
         }
         rng = new Random(seed);
-        
+
     }
 
 }
