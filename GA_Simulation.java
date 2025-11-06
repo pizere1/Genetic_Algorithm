@@ -63,7 +63,7 @@ public class GA_Simulation {
      */
     public ArrayList<Individual> evolve(ArrayList<Individual> generation, int k, int n){
         rankPopulation(generation);
-        rng = new Random();
+       // rng = new Random();
         ArrayList<Individual> best=new ArrayList<>();
         ArrayList<Individual> new_generation =new ArrayList<>();
         for(int i=0; i<k; i++){
@@ -100,7 +100,7 @@ public class GA_Simulation {
      */
     public void run(){
         ArrayList<Individual> population;
-        rng = new Random();
+       // rng = new Random();
         ArrayList<ArrayList<Individual>> generations=new ArrayList<>();
         int roundNumber;
         population=init();
@@ -131,8 +131,7 @@ public class GA_Simulation {
             }
         }
         rng = new Random(seed);
-        GA_Simulation simulation = new GA_Simulation(100, 15, 100,8,20, 0.09f,5);
-        simulation.run();
+        
     }
 
 }
